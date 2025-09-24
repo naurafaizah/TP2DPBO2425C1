@@ -1,18 +1,18 @@
 #include <iostream>
 #include <string>
-
-
 #include "Store.cpp"
 using namespace std;
 
 // fungsi untuk menampilkan tabel
 void showTable(Store list[], int count) {
+    // cetak header tabel
     printf("\n=================================================================================================================================================\n");
     printf("| %-2s | %-20s | %-10s | %-5s | %-10s | %-10s | %-10s | %-12s | %-10s | %-10s | %-12s |\n",
            "ID", "Name", "Price", "Stock", "Image", "Brand", "Warranty",
            "Category", "Location", "Seller", "Contact");
     printf("=================================================================================================================================================\n");
-
+    
+    // looping untuk menampilkan setiap produk
     for (int i = 0; i < count; i++) {
         printf("| %-2d | %-20s | %-10d | %-5d | %-10s | %-10s | %-10s | %-12s | %-10s | %-10s | %-12s |\n",
                list[i].getId(),
@@ -27,6 +27,7 @@ void showTable(Store list[], int count) {
                list[i].getSellerName().c_str(),
                list[i].getContact().c_str());
     }
+    // cetak footer tabel
     printf("=================================================================================================================================================\n");
 }
 
@@ -35,7 +36,7 @@ int main() {
     Store list[100]; // maksimal 100 produk
     int count = 0;   // jumlah produk saat ini
 
-    // ===== 5 data awal =====
+    // 5 data awal dimasukkan secara hardcode
     list[count++] = Store(1, "Laptop Asus ROG", 18000000, 5, "rog.jpg",
                          "Asus", "2 Tahun", "Laptop",
                          "Bandung", "Andi", "081234567890");
@@ -59,18 +60,20 @@ int main() {
     // tampilkan tabel data awal
     showTable(list, count);
 
-    // tanya user
+    // tanya user apakah ingin menambah data
     char jawab;
     cout << "\nApakah ingin menambahkan data baru? (y/n): ";
     cin >> jawab;
     cin.ignore();
 
+    // jika user menjawab y maka input data baru
     if (jawab == 'y' || jawab == 'Y') {
         int n;
         cout << "Berapa data baru yang ingin ditambahkan? ";
         cin >> n;
         cin.ignore();
 
+        // input data baru sebanyak n
         for (int i = 0; i < n; i++) {
             cout << "\nInput data ke-" << (i+1) << endl;
 
@@ -89,6 +92,7 @@ int main() {
             cout << "Seller Name: "; getline(cin, sellerName);
             cout << "Contact: "; getline(cin, contact);
 
+            // tambahkan data ke array list
             list[count++] = Store(id, name, price, stock, image,
                                   brand, warranty, category,
                                   location, sellerName, contact);
@@ -98,6 +102,7 @@ int main() {
         showTable(list, count);
     }
 
+    // program selesai
     cout << "\nProgram selesai.\n";
     return 0;
 }
