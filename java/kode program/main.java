@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        ArrayList<Store> list = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
+        ArrayList<Store> list = new ArrayList<>(); // arraylist untuk menyimpan data store
+        Scanner sc = new Scanner(System.in); // scanner untuk input user
 
-        // ===== 5 data awal =====
+        // 5 data awal
         list.add(new Store(1, "Laptop Asus ROG", 18000000, 5, "rog.jpg",
                 "Asus", "2 Tahun", "Laptop",
                 "Bandung", "Andi", "081234567890"));
@@ -26,15 +26,16 @@ public class main {
         // tampilkan tabel data awal
         showTable(list);
 
-        // tanya user
+        // tanya user apakah ingin menambahkan data baru
         System.out.print("\nApakah ingin menambahkan data baru? (y/n): ");
         String jawab = sc.nextLine();
 
         if (jawab.equalsIgnoreCase("y")) {
             System.out.print("Berapa data baru yang ingin ditambahkan? ");
             int n = sc.nextInt();
-            sc.nextLine(); // buang newline
-
+            sc.nextLine(); // buang newline agar input berikutnya tidak terlewat
+            
+            // loop input data baru sebanyak n kali
             for (int i = 0; i < n; i++) {
                 System.out.println("\nInput data ke-" + (i+1));
 
@@ -81,6 +82,7 @@ public class main {
             showTable(list);
         }
 
+        // pesan akhir
         System.out.println("\nProgram selesai.");
     }
 
@@ -91,6 +93,7 @@ public class main {
                 "ID", "Name", "Price", "Stock", "Image", "Brand", "Warranty", "Category", "Location", "Seller", "Contact");
         System.out.println("=================================================================================================================================================");
 
+        // loop setiap data store di list dan tampilkan dalam format tabel
         for (Store s : list) {
             System.out.printf("| %-2d | %-20s | %-10d | %-5d | %-10s | %-10s | %-10s | %-12s | %-10s | %-10s | %-12s |\n",
                     s.getId(), s.getName(), s.getPrice(), s.getStock(), s.getImage(),
