@@ -2,19 +2,21 @@
 #include <string>
 using namespace std;
 
+// class product berisi atribut dasar sebuah produk
 class Product {
-private:
-    int id;
-    string name;
-    int price;
-    int stock;
-    string image;
+    private:
+        int id;         // atribut untuk menyimpan id produk
+        string name;    // atribut untuk menyimpan nama produk
+        int price;      // atribut untuk menyimpan harga produk
+        int stock;      // atribut untuk menyimpan jumlah stok produk
+        string image;   // atribut untuk menyimpan path gambar produk
 
-public:
-    // constructor
+    public:
+    // constructor kosong
     Product() {
     }
 
+    // constructor dengan parameter untuk inisialisasi objek
     Product(int id, string name, int price, int stock, string image) {
         this->id = id;
         this->name = name;
