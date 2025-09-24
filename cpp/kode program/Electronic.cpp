@@ -2,17 +2,20 @@
 #include "Product.cpp"
 using namespace std;
 
-class Electronic : public Product{
+// class electronic adalah turunan dari class product
+class Electronic : public Product {
     private:
-        string brand;
-        string warranty;
-        string category;
+        string brand;     // atribut brand untuk menyimpan merek
+        string warranty;  // atribut warranty untuk menyimpan garansi
+        string category;  // atribut category untuk menyimpan kategori produk
 
     public:
+    // constructor kosong
     Electronic() {
 
     }
 
+    // constructor dengan parameter yang memanggil constructor dari product
     Electronic(int id, string name, int price, int stock, string image,
                 string brand, string warranty, string category) : Product(id, name, price, stock, image){
                 this->brand = brand;
