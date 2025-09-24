@@ -1,13 +1,17 @@
 from Product import Product
 
-# Electronic mewarisi dari Product
+# Kelas Electronic mewarisi dari Product
+# Electronic menambahkan atribut khusus untuk barang elektronik:
+# brand (merek), warranty (garansi), dan category (kategori).
 class Electronic(Product):
     def __init__(self, id, name, price, stock, image, brand, warranty, category):
-        # panggil constructor dari Product
+        # Panggil constructor dari parent class (Product)
         super().__init__(id, name, price, stock, image)
-        self._brand = brand
-        self._warranty = warranty
-        self._category = category
+        
+        # atribut tambahan untuk produk elektronik
+        self._brand = brand          # merek produk
+        self._warranty = warranty    # masa garansi
+        self._category = category    # kategori produk (contoh: Laptop, Smartphone, TV)
 
     # setter dan getter untuk brand
     def set_brand(self, brand):
