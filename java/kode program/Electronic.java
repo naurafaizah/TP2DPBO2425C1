@@ -1,11 +1,14 @@
+// class electronic merupakan turunan dari product
+// menambahkan atribut tambahan: brand, warranty, dan category
 public class Electronic extends Product {
-    private String brand;
-    private String warranty;
-    private String category;
+    private String brand;     // menyimpan merk produk
+    private String warranty;  // menyimpan informasi garansi produk
+    private String category;  // menyimpan kategori produk
 
+    // constructor dengan parameter, memanggil constructor parent (product)
     public Electronic(int id, String name, int price, int stock, String image,
                       String brand, String warranty, String category) {
-        super(id, name, price, stock, image);
+        super(id, name, price, stock, image); // memanggil constructor dari product
         this.brand = brand;
         this.warranty = warranty;
         this.category = category;
