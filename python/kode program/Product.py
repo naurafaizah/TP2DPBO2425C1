@@ -1,11 +1,12 @@
 class Product:
     # constructor
     def __init__(self, id, name, price, stock, image):
-        self._id = id
-        self._name = name
-        self._price = price
-        self._stock = stock
-        self._image = image
+        # atribut private (diawali underscore)
+        self._id = id          # menyimpan id produk
+        self._name = name      # menyimpan nama produk
+        self._price = price    # menyimpan harga produk
+        self._stock = stock    # menyimpan jumlah stok produk
+        self._image = image    # menyimpan path/gambar produk
 
     # setter dan getter untuk id
     def set_id(self, id):
