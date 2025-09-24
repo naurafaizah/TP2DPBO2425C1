@@ -1,15 +1,18 @@
 from Electronic import Electronic
 
-# Store mewarisi dari Electronic
+# Kelas Store mewarisi dari Electronic
+# Store menambahkan informasi tambahan seperti lokasi, nama penjual, dan kontak.
 class Store(Electronic):
     def __init__(self, id, name, price, stock, image,
                  brand, warranty, category,
                  location, seller_name, contact):
-        # panggil constructor Electronic
+        # Panggil constructor dari parent class (Electronic)
         super().__init__(id, name, price, stock, image, brand, warranty, category)
-        self._location = location
-        self._seller_name = seller_name
-        self._contact = contact
+        
+        # atribut tambahan khusus Store
+        self._location = location          # lokasi toko
+        self._seller_name = seller_name    # nama penjual
+        self._contact = contact            # kontak penjual
 
     # setter dan getter untuk location
     def set_location(self, location):
