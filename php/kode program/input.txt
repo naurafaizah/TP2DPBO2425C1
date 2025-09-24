@@ -1,0 +1,25 @@
+--- INPUT TEST CASE ---
+
+ID: 6
+Nama: Webcam Logitech Brio
+Harga: 2000000
+Stock: 20
+Image: images/WebcamLogitech.png
+Brand: Logitech
+Warranty: 6 Bulan
+Category: Camera
+Location: Jambi
+Seller Name: Tika
+Contact: 081356337689
+
+6
+Webcam Logitech Brio
+2000000
+20
+webcam.jpg
+Logitech
+6 Bulan
+Camera
+Jambi
+Tika
+081356337689
