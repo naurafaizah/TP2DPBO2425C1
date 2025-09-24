@@ -1,11 +1,12 @@
 public class Product {
     // atribut private untuk menyimpan data produk
-    private int id;
-    private String name;
-    private int price;
-    private int stock;
-    private String image;
+    private int id;       // menyimpan id produk
+    private String name;  // menyimpan nama produk
+    private int price;    // menyimpan harga produk
+    private int stock;    // menyimpan stok produk
+    private String image; // menyimpan path atau nama file gambar produk
 
+    // constructor untuk inisialisasi atribut produk
     public Product(int id, String name, int price, int stock, String image) {
         this.id = id;
         this.name = name;
