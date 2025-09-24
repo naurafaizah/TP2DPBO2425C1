@@ -1,8 +1,10 @@
 public class Store extends Electronic {
-    private String location;
-    private String sellerName;
-    private String contact;
+    // atribut tambahan khusus untuk toko
+    private String location;    // menyimpan lokasi toko
+    private String sellerName;  // menyimpan nama penjual
+    private String contact;     // menyimpan kontak penjual (misalnya nomor hp)
 
+    // constructor untuk inisialisasi semua atribut, termasuk atribut turunan
     public Store(int id, String name, int price, int stock, String image,
                  String brand, String warranty, String category,
                  String location, String sellerName, String contact) {
