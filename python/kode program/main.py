@@ -1,20 +1,25 @@
 from Store import Store  # pastikan file Store, Electronic, Product sudah dibuat
 
-# fungsi untuk menampilkan tabel
+# fungsi untuk menampilkan tabel data produk
 def show_table(store_list):
+    # garis pemisah tabel
     print("\n" + "=" * 145)
-    print(f"| {'ID':<2} | {'Name':<20} | {'Price':<10} | {'Stock':<5} | {'Image':<10} | {'Brand':<10} | {'Warranty':<10} | {'Category':<12} | {'Location':<10} | {'Seller':<10} | {'Contact':<12} |")
+    # header tabel dengan format rata kiri sesuai lebar kolom
+    print(f"| {'ID':<2} | {'Name':<20} | {'Price':<10} | {'Stock':<5} | {'Image':<10} | "
+          f"{'Brand':<10} | {'Warranty':<10} | {'Category':<12} | {'Location':<10} | "
+          f"{'Seller':<10} | {'Contact':<12} |")
     print("=" * 145)
 
+    # loop setiap objek Store dalam list, lalu tampilkan datanya sesuai getter
     for s in store_list:
         print(f"| {s.get_id():<2} | {s.get_name():<20} | {s.get_price():<10} | {s.get_stock():<5} | {s.get_image():<10} | "
               f"{s.get_brand():<10} | {s.get_warranty():<10} | {s.get_category():<12} | {s.get_location():<10} | "
               f"{s.get_seller_name():<10} | {s.get_contact():<12} |")
     print("=" * 145)
 
-
 def main():
-    # ===== 5 data awal =====
+    # 5 data awal (hardcode)
+    # membuat list berisi 5 objek Store (produk awal)
     store_list = [
         Store(1, "Laptop Asus ROG", 18000000, 5, "rog.jpg",
               "Asus", "2 Tahun", "Laptop",
@@ -36,7 +41,7 @@ def main():
     # tampilkan tabel data awal
     show_table(store_list)
 
-    # tanya user
+    # tanya user apakah mau tambah data baru
     jawab = input("\nApakah ingin menambahkan data baru? (y/n): ").strip().lower()
 
     if jawab == "y":
@@ -57,15 +62,17 @@ def main():
             seller_name = input("Seller Name: ")
             contact = input("Contact: ")
 
+            # buat objek Store baru lalu tambahkan ke list
             store_list.append(Store(id, name, price, stock, image,
                                     brand, warranty, category,
                                     location, seller_name, contact))
 
         # tampilkan tabel setelah update
         show_table(store_list)
-
+        
+    # akhir program
     print("\nProgram selesai.")
 
-
+# eksekusi main hanya jika file ini dijalankan langsung
 if __name__ == "__main__":
     main()
